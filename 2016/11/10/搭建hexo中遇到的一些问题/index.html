@@ -7,7 +7,7 @@
     
 
     <title>
-      归档 
+      搭建hexo中遇到的一些问题 | Sunpx 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,12 +16,37 @@
     
     
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+    <meta name="description" content="deploy: 
+ type: git
+ repository: https://github.com/sunpx3/sunpx3.github.io.git
+ branch: master    
+
+
+之前照着别人的教程搭建hexo , 到hexo d 提交代码到github上时报错，说没设置用户名。百度后在 stackoverflow 上看到改成
+deploy: type: git repo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建hexo中遇到的一些问题 | Sunpx">
+<meta property="og:url" content="http://yoursite.com/2016/11/10/搭建hexo中遇到的一些问题/index.html">
 <meta property="og:site_name" content="Sunpx">
+<meta property="og:description" content="deploy: 
+ type: git
+ repository: https://github.com/sunpx3/sunpx3.github.io.git
+ branch: master    
+
+
+之前照着别人的教程搭建hexo , 到hexo d 提交代码到github上时报错，说没设置用户名。百度后在 stackoverflow 上看到改成
+deploy: type: git repo">
+<meta property="og:updated_time" content="2016-11-10T10:56:17.372Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="归档">
+<meta name="twitter:title" content="搭建hexo中遇到的一些问题 | Sunpx">
+<meta name="twitter:description" content="deploy: 
+ type: git
+ repository: https://github.com/sunpx3/sunpx3.github.io.git
+ branch: master    
+
+
+之前照着别人的教程搭建hexo , 到hexo d 提交代码到github上时报错，说没设置用户名。百度后在 stackoverflow 上看到改成
+deploy: type: git repo">
     
     
     
@@ -141,46 +166,52 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-   <!-- do nothing -->
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">搭建hexo中遇到的一些问题</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/11/10/搭建hexo中遇到的一些问题/" title="link to 搭建hexo中遇到的一些问题">搭建hexo中遇到的一些问题</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-11-10" class="post-list__meta--date date">2016-11-10</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
     
 
-    <span class="pagination__page-number"> 1 / 1</span>
+    <div class="post-meta">
+      <time datetime="2016-11-10" class="post-meta__date date">2016-11-10</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
     
     
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <pre>
+deploy: 
+ type: git
+ repository: https://github.com/sunpx3/sunpx3.github.io.git
+ branch: master    
+</pre>
+
+<p>之前照着别人的<a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">教程</a>搭建hexo , 到hexo d 提交代码到github上时报错，说没设置用户名。<br>百度后在 stackoverflow 上看到改成</p>
+<p><pre><br>deploy:<br> type: git<br> repository: git@github.com:sunpx3/sunpx3.github.io.git<br> branch: master<br></pre><br>成功解决。</p>
+<hr>
+<p><a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a><br>使用hexo s启动本地服务的时候不能访问，查了下端口，发现是4000端口被占用，故修改端口后访<br>hexo s -p 5000 ，成功解决。</p>
+<hr>
+<p>错误:ERROR Deployer not found: git<br>解决:npm install hexo-deployer-git –save    </p>
+
+  </section>
+
+  
+  
+</article>
 
 
-</div>
             <footer class="footer">
 
     <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
@@ -208,6 +239,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     
     
     <!--kill ie6 -->
