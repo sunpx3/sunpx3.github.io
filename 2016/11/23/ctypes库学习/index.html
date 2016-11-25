@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      ctypes库学习 | Sunpx 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="John Doe">
+    
+    
+
+    <meta name="description" content="调用dll&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ctypes提供了有一种方法调用dll,cdll(),windll(),oledll();不同&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cdll加载的库必须使用标准的cdecl约定 。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;windll方法加载的库，其中导出函数必须使用stdcall调用(win32 api).&amp;nbsp;&amp;n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ctypes库学习 | Sunpx">
+<meta property="og:url" content="http://yoursite.com/2016/11/23/ctypes库学习/index.html">
+<meta property="og:site_name" content="Sunpx">
+<meta property="og:description" content="调用dll&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ctypes提供了有一种方法调用dll,cdll(),windll(),oledll();不同&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cdll加载的库必须使用标准的cdecl约定 。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;windll方法加载的库，其中导出函数必须使用stdcall调用(win32 api).&amp;nbsp;&amp;n">
+<meta property="og:image" content="http://files.jb51.net/file_images/article/201410/2014109110418627.jpg?20149911429">
+<meta property="og:updated_time" content="2016-11-25T16:54:07.623Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ctypes库学习 | Sunpx">
+<meta name="twitter:description" content="调用dll&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ctypes提供了有一种方法调用dll,cdll(),windll(),oledll();不同&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cdll加载的库必须使用标准的cdecl约定 。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;windll方法加载的库，其中导出函数必须使用stdcall调用(win32 api).&amp;nbsp;&amp;n">
+<meta name="twitter:image" content="http://files.jb51.net/file_images/article/201410/2014109110418627.jpg?20149911429">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunpx</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">ctypes库学习</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-11-23" class="post-meta__date date">2016-11-23</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>调用dll<br>&nbsp;&nbsp;&nbsp;&nbsp;ctypes提供了有一种方法调用dll,cdll(),windll(),oledll();<br>不同<br>&nbsp;&nbsp;&nbsp;&nbsp;cdll加载的库必须使用标准的cdecl约定 。<br>&nbsp;&nbsp;&nbsp;&nbsp;windll方法加载的库，其中导出函数必须使用stdcall调用(win32 api).<br>&nbsp;&nbsp;&nbsp;&nbsp;oledll方法与windll类似，不过如果函数返回一个HRESULT错误代码，使用com得到具体错误信息。<br>调用例子<br>    from ctypes import *<br>    msvcrt = cdll.msvcrt<br>    msvcrt.printf(“%s”,”HelloWorld!”);</p>
+<p>echo: HelloWorld!</p>
+<pre><code>&gt;&gt;&gt; seitz = c_char_p(&quot;loves the python&quot;)
+&gt;&gt;&gt; print seitz
+c_char_p(&apos;loves the python&apos;)
+&gt;&gt;&gt; print seitz.value
+loves the pytho
+</code></pre><p>seitz.value 可间接访问指针所指向的内容。</p>
+<p>python中构造c 数据类型 对照表</p>
+<hr>
+<p>C Type Python Type ctypes Type</p>
+<hr>
+<p>char                         1-character string             c_char<br>wchar_t                     1-character Unicodestring     c_wchar<br>char                         int/long                     c_byte<br>char                         int/long                     c_ubyte<br>short                         int/long                     c_short<br>unsigned                     short int/long                 c_ushort<br>int                         int/long                     c_int<br>unsigned                     int int/long                 c_uint<br>long                         int/long                     c_long<br>unsigned                     long int/long                 c_ulong<br>long long                     int/long                     c_longlong<br>unsigned long long             int/long                     c_ulonglong<br>float                         float                         c_float<br>double                         float                         c_double<br>char <em>(NULL terminated)     string or none                 c_char_p<br>wchar_t </em> (NULL terminated) unicode or none             c_wchar_p<br>void *                         int/long or none             c_void_p</p>
+<p>定义结构体<br>什么是结构体:结构体就是抽象出现实事物特有的属性与行为的一种数据结构。<br>    class student(Structure):<br>        <em>fields</em> = [(“name”,c_char_p),<br>                   (“age”,c_short)]</p>
+<pre><code>stu = student();
+stu.name = &quot;zhangsan&quot;;
+stu.age  = 23;
+</code></pre><p>内存结构<br><img src="http://files.jb51.net/file_images/article/201410/2014109110418627.jpg?20149911429"></p>
+<p>定义联合体<br>什么是联合体:将多种不同类型的变量存放到同一段内存中的一种数据结构。<br>        class student(Union):<br>        <em>fields</em> = [(“name”,c_char_p),<br>                   (“age”,c_short)]</p>
+<p>例子<br>    from ctypes import <em><br>    class barley_amount(Union):<br>        <em>fields</em> = [<br>            (“barley_long”, c_long),<br>            (“barley_int”, c_int),<br>            (“barley_char”, c_char</em> 8),<br>        ]<br>    value = raw_input(“Enter the amount ofbarley to putinto the beer vat:<br>    my_barley = barley_amount(int(value))<br>    print “Barley amount as along: %ld” % my_barley.barley_long<br>    print “Barley amount as anint: %d” % my_barley.barley_long<br>    print “Barley amount as achar: %s” % my_barley.barley_char</p>
+<pre><code>C:\Python25&gt;python chapter1-unions.py
+Enter the amount of barley to putinto the beer vat: 66
+Barley amount as a long: 66
+Barley amount as anint: 66
+Barley amount as a char:B
+C:\Python25
+</code></pre><p>方法<br>    dll注入process方法<br>        1，OpenProcess获得要注入进程的句柄<br>        2，VirtualAllocEx在远程进程中开辟出一段内存，长度为strlen(dllname)+1;<br>        3，WriteProcessMemory将Dll的名字写入第二步开辟出的内存中。<br>        4，CreateRemoteThread将LoadLibraryA作为线程函数，参数为Dll的名称，创建新线程<br>        5，CloseHandle关闭线程句柄<br>    卸载Dll：<br>        1，CreateRemoteThread将GetModuleHandle注入到远程进程中，参数为被注入的Dll名<br>        2，GetExitCodeThread将线程退出的退出码作为Dll模块的句柄值。<br>        3，CloseHandle关闭线程句柄<br>        3，CreateRemoteThread将FreeLibraryA注入到远程进程中，参数为第二步获得的句柄值。<br>        4，WaitForSingleObject等待对象句柄返回<br>        5，CloseHandle关闭线程及进程句柄。</p>
+<p>小例子<br>    inject.py<br>    <pre><br>    import sys<br>    from ctypes import <em><br>    from defines import </em><br>    kernel32 = windll.kernel32<br>    PAGE_EXECUTE_READWRITE = 0x00000040</pre></p>
+<pre><code>#句柄访问权限
+PROCESS_ALL_ACCESS = (0x000F0000 | 0x00100000 | 0xFFF)
+VIRTUAL_MEM = (0x1000 | 0x2000)
+#victim = r&quot;C:\windows\system32\calc.exe&quot;
+startupinfo =STARTUPINFO()
+process_information =PROCESS_INFORMATION()
+creation_flags =CREATE_NEW_CONSOLE
+startupinfo.dwFlags =0x1
+startupinfo.wShowWindow =0x0
+startupinfo.cb =sizeof(startupinfo)
+#pid = process_information.dwProcessId
+def inject(pid,data,parameter=0):
+    h_process = kernel32.OpenProcess(PROCESS_ALL_ACCESS,False,int(pid))
+    if not h_process:
+        raise SystemExit,&quot;[!] Could not acquire a handle to PID : %s&quot;%pid
+    arg_address=kernel32.VirtualAllocEx(h_process,
+                       0,
+                       len(data),
+                       VIRTUAL_MEM,
+                       PAGE_EXECUTE_READWRITE)
+    written = c_int(0)
+    kernel32.WriteProcessMemory(h_process,
+                   arg_address,
+                   data,
+                   len(data),
+                   byref(written))
+    thread_id = c_ulong(0)
+    start_address = arg_address
+    if not kernel32.CreateRemoteThread(h_process,
+                      None,
+                      0,
+                      start_address,
+                      parameter,
+                      0,
+                      byref(thread_id)):
+        raise SystemExit,&quot;[!] Fail to inject Dll . Exit .. &quot;
+    return True
+
+def getProcessPid(exeName):
+    procList = getProcList()  
+    pid = &quot;&quot;;
+    for proc in procList:  
+        if exeName==proc.szExeFile:
+            pid = proc.th32ProcessID
+            break;
+        # print(&quot;proc.szExeFile=%s, proc.th32ParentProcessID=%d, proc.th32ProcessID=%d&quot; % (proc.szExeFile, proc.th32ParentProcessID, proc.th32ProcessID))  
+
+    if pid!=&quot;&quot;:
+        return int(pid);
+    else:
+        return &quot;error&quot;;
+
+def getProcList():  
+    CreateToolhelp32Snapshot = windll.kernel32.CreateToolhelp32Snapshot  
+    Process32First = windll.kernel32.Process32First  
+    Process32Next = windll.kernel32.Process32Next  
+    CloseHandle = windll.kernel32.CloseHandle  
+
+    hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0)  
+
+    pe32 = PROCESSENTRY32()  
+    pe32.dwSize = sizeof(PROCESSENTRY32)  
+    if Process32First(hProcessSnap,byref(pe32)) == False:  
+        return  
+    while True:  
+        yield pe32  
+        if Process32Next(hProcessSnap,byref(pe32)) == False:  
+            break  
+    CloseHandle(hProcessSnap)
+&lt;hr/&gt;
+
+define.py
+
+from ctypes import *
+import ctypes
+# map the Microsoft types
+BYTE = c_ubyte
+WORD = c_ushort
+DWORD = c_ulong
+LPBYTE = POINTER(c_ubyte)
+LPTSTR = POINTER(c_char)
+HANDLE = c_void_p
+PVOID = c_void_p
+LPVOID = c_void_p
+UINT_PTR = c_ulong
+SIZE_T = c_ulong
+class STARTUPINFO(Structure):
+  _fields_=[
+    (&quot;cb&quot;,  DWORD),
+    (&quot;lpReserved&quot;,  LPTSTR),
+    (&quot;lpDesktop&quot;,   LPTSTR),
+    (&quot;lpTitle&quot;,   LPTSTR),
+    (&quot;dwX&quot;,  DWORD),
+    (&quot;dwY&quot;,  DWORD),
+    (&quot;dwXSize&quot;,  DWORD),
+    (&quot;dwYSize&quot;,  DWORD),
+    (&quot;dwXcountChars&quot;,  DWORD),
+    (&quot;dwYcountChars&quot;,  DWORD),
+    (&quot;dwFillAttribute&quot;,  DWORD),
+    (&quot;dwFlags&quot;, DWORD),
+    (&quot;wShowWindow&quot;,  WORD),
+    (&quot;cbReserved2&quot;,  WORD),
+    (&quot;lbReserved2&quot;,  LPBYTE),
+    (&quot;hStdInput&quot;,   HANDLE),
+    (&quot;hStdOutput&quot;,   HANDLE),
+    (&quot;hStdError&quot;,   HANDLE),
+    ]
+class PROCESS_INFORMATION(Structure):
+    _fields_=[
+      (&quot;hProcess&quot;,   HANDLE),
+      (&quot;hThread&quot;,   HANDLE),
+      (&quot;dwProcessId&quot;,   DWORD),
+      (&quot;dwThreadId&quot;,   DWORD),
+      ]
+CREATE_NEW_CONSOLE = 0x00000010
+
+#get process list
+TH32CS_SNAPPROCESS = 0x00000002  
+class PROCESSENTRY32(ctypes.Structure):  
+     _fields_ = [(&quot;dwSize&quot;, ctypes.c_ulong),  
+                 (&quot;cntUsage&quot;, ctypes.c_ulong),  
+                 (&quot;th32ProcessID&quot;, ctypes.c_ulong),  
+                 (&quot;th32DefaultHeapID&quot;, ctypes.c_ulong),  
+                 (&quot;th32ModuleID&quot;, ctypes.c_ulong),  
+                 (&quot;cntThreads&quot;, ctypes.c_ulong),  
+                 (&quot;th32ParentProcessID&quot;, ctypes.c_ulong),  
+                 (&quot;pcPriClassBase&quot;, ctypes.c_ulong),  
+                 (&quot;dwFlags&quot;, ctypes.c_ulong),  
+                 (&quot;szExeFile&quot;, ctypes.c_char * 260)]  
+&lt;/pre&gt;
+
+my_test.py
+
+import my_debugger
+from ctypes import *
+from my_debugger_defines import *
+kernel32 = windll.kernel32
+debugger = my_debugger.debugger()
+
+pid = raw_input(&quot;Enter the PID of the process to attach to: &quot;)
+debugger.attach(int(pid))
+debugger.run()
+debugger.detach()
+
+
+:待续...
+</code></pre>
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
