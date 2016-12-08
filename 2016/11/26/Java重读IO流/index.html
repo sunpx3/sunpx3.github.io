@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Sunpx">
 <meta property="og:description" content="以前学习IO的时候看到一堆的类与api,没有相应的知识结构，经常一脸懵逼，所以现在重新梳理下。1、什么是IO流？    IO流是存储设备之间的一种数据交换，形象的称作流。2、流的分类    按方向分:        输入输出流    按流的数据单位: 字符流与字节流，顶屋基类为Reader/Write, InputStream/OutPutStream3、为什么一个读写操作需要这么多类？    当">
 <meta property="og:image" content="http://pic002.cnblogs.com/images/2012/384764/2012031413373126.jpg">
-<meta property="og:updated_time" content="2016-11-26T06:23:40.603Z">
+<meta property="og:updated_time" content="2016-12-08T09:23:31.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java重读IO流 | Sunpx">
 <meta name="twitter:description" content="以前学习IO的时候看到一堆的类与api,没有相应的知识结构，经常一脸懵逼，所以现在重新梳理下。1、什么是IO流？    IO流是存储设备之间的一种数据交换，形象的称作流。2、流的分类    按方向分:        输入输出流    按流的数据单位: 字符流与字节流，顶屋基类为Reader/Write, InputStream/OutPutStream3、为什么一个读写操作需要这么多类？    当">
@@ -175,7 +175,6 @@ classes that you can use:
     <p>以前学习IO的时候看到一堆的类与api,没有相应的知识结构，经常一脸懵逼，所以现在重新梳理下。<br>1、什么是IO流？<br>    IO流是存储设备之间的一种数据交换，形象的称作流。<br>2、流的分类<br>    按方向分:        输入输出流<br>    按流的数据单位: 字符流与字节流，顶屋基类为Reader/Write, InputStream/OutPutStream<br>3、为什么一个读写操作需要这么多类？<br>    当数据被写入IO后，已经被序列化了，是以byte为单位的，而FileInputStream 与FileOutPutStream只提供了简易的read(),write()方法<br>只能一个byte一个byte的读取，所以为了开发方便，出现了各种“辅助”的类，用来批量存读取。</p>
 <p>有图为证:<br><img src="http://pic002.cnblogs.com/images/2012/384764/2012031413373126.jpg"></p>
 <p>4、这么多类开发时候如何选择？<br>    如图所示，判断操作数据类型，如纯文本，就选字符流，二进制就选字节流，<br>再，判断是读取还是写入操作，选择对应基类，<br>再，根据需求选择，如，是否需要高效?需要。Buffer,<br>如，字节流转字符流InputStreamReader str = new InputStreamReader(System.in);</p>
-<p>5、如何记忆？<br>    一图顶万言。–</p>
 
   </section>
 
