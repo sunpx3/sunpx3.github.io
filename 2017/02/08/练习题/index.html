@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      练习题 | Sunpx 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="John Doe">
+    
+    
+
+    <meta name="description" content="package com.sunpx.test;
+public class TClass {
+public static void main(String[] args) {
+
+    Integer int1 = new Integer(20);
+    Integer int2 = new Integer(20);
+    System.out.println(int1 == int2); //">
+<meta property="og:type" content="article">
+<meta property="og:title" content="练习题 | Sunpx">
+<meta property="og:url" content="http://yoursite.com/2017/02/08/练习题/index.html">
+<meta property="og:site_name" content="Sunpx">
+<meta property="og:description" content="package com.sunpx.test;
+public class TClass {
+public static void main(String[] args) {
+
+    Integer int1 = new Integer(20);
+    Integer int2 = new Integer(20);
+    System.out.println(int1 == int2); //">
+<meta property="og:updated_time" content="2017-02-08T04:10:59.236Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="练习题 | Sunpx">
+<meta name="twitter:description" content="package com.sunpx.test;
+public class TClass {
+public static void main(String[] args) {
+
+    Integer int1 = new Integer(20);
+    Integer int2 = new Integer(20);
+    System.out.println(int1 == int2); //">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Sunpx</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">练习题</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-02-08" class="post-meta__date date">2017-02-08</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>package com.sunpx.test;</p>
+<p>public class TClass {</p>
+<pre><code>public static void main(String[] args) {
+
+    Integer int1 = new Integer(20);
+    Integer int2 = new Integer(20);
+    System.out.println(int1 == int2); // false
+    System.out.println(int1.equals(int2)); // true
+
+    Test test1 = new Test();
+    Test test2 = new Test();
+    test1.i = test2.i = 100;
+    System.out.println(test1.equals(test2)); // false
+    // 注*
+    // &quot;==&quot; 是用来比较基础数据类型。当用来比较对象数据类型时，则比较的是对象地址。
+    // &quot;equals()方法用来比较对象的内容是否相同，&quot;
+    // 自己定义的类的对象进行比较时，由于在自己的类中没有重写.equals()方法，使用的是Object类中默认的方法，
+    // 又 Object中equals()默认行为是比较引用，故 自定义类的对象比较会false。
+    // 大多数java类库都实现了equals()方法，以便用来比较对象内容，而非比较对象引用。
+
+    String str1 = &quot;hello&quot;;
+    String str2 = &quot;hello&quot;;
+    System.err.println(str1 == str2); // true
+    System.err.println(str1.equals(str2)); // true
+    // 共创建一个对象。
+    // 若按照上面结论，第二个true无可争议，
+    // 但 str1 == str2 比较的是引用，应该是false才对。
+    // 画个内存分配图.
+    // str1,str2 两个引用指向同一常量(分配内存时会在常量池查找是否有这个常量，若有，返回内存地址，若无，在常量池开辟新的常量)，
+    // 所以获得的内存地址是相同的。
+
+    String str3 = new String(&quot;World&quot;);
+    String str4 = new String(&quot;World&quot;);
+    System.out.println(str3 == str4); // false
+    System.out.println(str3.equals(str4)); // true
+    // 共创建三个对象(World在常量区是一个对象)。
+    // str3被new时，会在堆中创建new String(&quot;World&quot;)对象，在常量池创建&quot;World&quot; ,
+    // str3被new时，在堆中创建new String(&quot;World&quot;)对象，查找常量池存在&quot;World&quot;，故不再创建。
+
+    Integer i1 = 20;
+    Integer i2 = 20;
+    Integer i3 = 128;
+    Integer i4 = 128;
+    System.out.println(i1 == i2); // true
+    System.out.println(i3 == i4); // false
+    // 首先会进行自动装箱操作，调用valueOf()方法。
+    // Integer i = 1; 相当于Integer i = Integer.valueOf(1),这个用到了Integer的缓存；
+    // 而Integer的==操作符，比较的是地址，当且仅当两者是同一个对象的时候，才会返回true。
+    // 所以直接赋值的话，是相等的。但是值域得在-128到127以内，因为Integer只缓存了这一个范围的对象。
+    // 若不在范围，则直接创建Integer对象.
+
+    /**
+     * Returns an {@code Integer} instance representing the specified
+     * {@code int} value. If a new {@code Integer} instance is not required,
+     * this method should generally be used in preference to the constructor
+     * {@link #Integer(int)}, as this method is likely to yield
+     * significantly better space and time performance by caching frequently
+     * requested values.
+     *
+     * This method will always cache values in the range -128 to 127,
+     * inclusive, and may cache other values outside of this range.
+     */
+    /*
+     * public static Integer valueOf(int i) { 
+     *     if (i &gt;= IntegerCache.low &amp;&amp;i&lt;= IntegerCache.high) 
+     *         return IntegerCache.cache[i+(-IntegerCache.low)]; 
+     *  return new Integer(i); 
+     * }
+     */
+
+}
+</code></pre><p>}</p>
+<p>class Test {<br>    int i;<br>}</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
